@@ -33,18 +33,68 @@ This project uses a **NodeMCU ESP8266** microcontroller to monitor data from mul
 
 ---
 
+### **Connections for NodeMCU with ADXL345, Ultrasonic Sensors, and Piezoelectric Sensor**
+
+---
+
+#### **1. ADXL345 (Accelerometer)**  
+| ADXL345 Pin | NodeMCU Pin |  
+|-------------|-------------|  
+| **VCC**     | **3.3V**    |  
+| **GND**     | **GND**     |  
+| **SCL**     | **D1 (GPIO5)** |  
+| **SDA**     | **D2 (GPIO4)** |  
+| **CS**      | **Not Connected** (use I2C mode) |  
+| **INT1**    | **Not Connected** |  
+| **INT2**    | **Not Connected** |  
+
+---
+
+#### **2. Ultrasonic Sensors (HC-SR04)**  
+**Sensor 1:**  
+| HC-SR04 Pin | NodeMCU Pin |  
+|-------------|-------------|  
+| **VCC**     | **Vin**     |  
+| **GND**     | **GND**     |  
+| **Trig**    | **D5 (GPIO14)** |  
+| **Echo**    | **D6 (GPIO12)** |  
+
+**Sensor 2:**  
+| HC-SR04 Pin | NodeMCU Pin |  
+|-------------|-------------|  
+| **VCC**     | **Vin**     |  
+| **GND**     | **GND**     |  
+| **Trig**    | **D7 (GPIO13)** |  
+| **Echo**    | **D8 (GPIO15)** |  
+
+---
+
+#### **3. Piezoelectric Sensor**  
+| Piezo Pin   | NodeMCU Pin |  
+|-------------|-------------|  
+| **Signal**  | **A0 (Analog Pin)** |  
+| **GND**     | **GND**     |  
+| **VCC**     | **3.3V**    |  
+
+---
+
+#### **Power Source**  
+- Power the NodeMCU via its micro-USB port.  
+- Use a stable 5V power supply for the sensors if required.  
+
+---
+
 #### **How to Set Up**  
 1. **Clone the Repository**:  
    ```bash  
-   git clone https://github.com/YourUsername/YourRepositoryName.git  
+   [git clone https://github.com/YourUsername/YourRepositoryName.git](https://github.com/dharaneshwaran7/Real-Time-Sensor-Monitoring.git)  
    ```  
 
 2. **Open in Arduino IDE**:  
-   - Navigate to `src/main.ino` and open it in the Arduino IDE.  
+   - Navigate to `nodemcu.ino` and open it in the Arduino IDE.  
 
 3. **Install Required Libraries**:  
    - `ESP8266WiFi`  
-   - `Wire`  
 
 4. **Set Wi-Fi Credentials**:  
    - Edit the following lines in the code to match your network:  
@@ -62,31 +112,7 @@ This project uses a **NodeMCU ESP8266** microcontroller to monitor data from mul
 
 ---
 
-#### **Directory Structure**  
-```
-.
-├── README.md            # Project documentation  
-├── src/                 # Source code directory  
-│   └── main.ino         # Arduino code for the project  
-└── LICENSE              # License (optional)  
-```  
-
----
-
-#### **Web Interface Screenshot**  
-*(Add a screenshot of your web interface here)*  
-
----
-
-#### **License**  
-This project is open-source and licensed under the [MIT License](LICENSE).  
-
----
-
 #### **Contribution Guidelines**  
 - Report bugs or suggestions via GitHub Issues.  
 - Submit improvements through pull requests.  
 
----
-
-Feel free to customize further if needed!
